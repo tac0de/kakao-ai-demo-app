@@ -22,6 +22,32 @@ npm run dev
 브라우저:
 - `http://localhost:8787`
 
+## Railway 배포 (추천)
+1. Railway 로그인
+```bash
+railway login
+```
+2. 프로젝트 생성/연결
+```bash
+railway init
+```
+3. 환경변수 설정
+- `TARGET_WEBHOOK_URL`: Firebase Functions `kakaobot` URL
+- `DEMO_DEFAULT_ACCOUNT_ID`: 예) `demo-user-001`
+
+4. 배포
+```bash
+railway up
+```
+
+5. 배포 URL 확인
+```bash
+railway domain
+```
+
+참고:
+- `railway.json`에 헬스체크(`/health`)와 시작 명령이 포함되어 있음
+
 ## 포함 기능
 - 계정/채널 타입 설정 (`dm`/`group`)
 - 빠른 명령 버튼 (`/체험시작`, `/앱전환 default`, `/앱전환 preview`, `/내아이디`)
