@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kakao AI Demo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-1"></div>
+    <div class="bg-shape bg-2"></div>
+    <main class="layout">
+      <section class="panel panel-config">
+        <h1>Kakao AI Demo</h1>
+        <p class="sub">강의용 미리보기 데모 앱</p>
+
+        <label>Account ID</label>
+        <input id="accountId" placeholder="demo-user-001" />
+
+        <label>Channel Type</label>
+        <select id="channelType">
+          <option value="dm">dm</option>
+          <option value="group">group</option>
+        </select>
+
+        <label>Room ID (group일 때)</label>
+        <input id="roomId" placeholder="demo-room-001" />
+
+        <div class="quick-grid">
+          <button data-cmd="/체험시작">/체험시작</button>
+          <button data-cmd="/앱전환 default">/앱전환 default</button>
+          <button data-cmd="/앱전환 preview">/앱전환 preview</button>
+          <button data-cmd="/내아이디">/내아이디</button>
+        </div>
+      </section>
+
+      <section class="panel panel-chat">
+        <div id="messages" class="messages"></div>
+
+        <form id="chatForm" class="composer">
+          <input
+            id="utterance"
+            placeholder="메시지를 입력하세요. 예: /체험시작 또는 일반 질문"
+          />
+          <button type="submit">보내기</button>
+        </form>
+
+        <details class="raw-box">
+          <summary>최근 Raw JSON</summary>
+          <pre id="rawOutput">아직 없음</pre>
+        </details>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
